@@ -132,24 +132,14 @@ export NVM_DIR="/Users/ericdouglas/.nvm"
 
 # go path
 export GOPATH=$HOME/Documents/dev/go
+export GOROOT=/usr/local/opt/go/libexec
 
-# aws creds
-export AWS_ACCESS_KEY_ID=AKIAINZNN7K6V4UTV5OQ
-export AWS_SECRET_ACCESS_KEY=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
-export AWS_DEFAULT_REGION=us-east-1
-
-export BRIDG_HOME=$HOME/Bridg/bridg-docker-dev
-
-# java
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
-# bridg release alias
-alias release='$HOME/Bridg/bridg-docker-dev/bridg-config/deploy/bin/release'
+export AWS_PROFILE=default
 
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 # Ensure user-installed binaries take precedence
-export PATH=$HOME/Documents/dev/go/bin:$HOME/Bridg/src/bridg-scripts/bin:/usr/local/bin:$PATH
+export PATH=$HOME/Documents/dev/go/bin:/usr/local/bin:$PATH
 
 # virtualenvwrapper start up
 . /usr/local/bin/virtualenvwrapper.sh
