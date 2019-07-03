@@ -84,6 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# zsh autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 
+
 # docker env setup
 eval "$(docker-machine env default)"
 
@@ -93,25 +96,28 @@ export PIP_REQUIRE_VIRTUALENV=false
 # set python vritualenv directory for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 
+# set python vritualenv directory for virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
 # nvm path
 export NVM_DIR="/Users/ericdouglas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # go path
 export GOPATH=$HOME/Documents/dev/go
+export GOROOT=/usr/local/opt/go/libexec
 
 # aws creds
-export AWS_ACCESS_KEY_ID=AKIAINZNN7K6V4UTV5OQ
-export AWS_SECRET_ACCESS_KEY=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
-export AWS_DEFAULT_REGION=us-east-1
-
-export BRIDG_HOME=$HOME/Bridg/bridg-docker-dev
+export AWS_PROFILE=default
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
+unset AWS_DEFAULT_REGION
 
 # java
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
-# bridg release alias
-alias release='$HOME/Bridg/bridg-docker-dev/bridg-config/deploy/bin/release'
 
 # docker-compose shorthand alias
 alias fig='/usr/local/bin/docker-compose'
@@ -124,4 +130,7 @@ export PATH=$HOME/Documents/dev/go/bin:$HOME/Bridg/src/bridg-scripts/bin:/usr/lo
 # virtualenvwrapper start up
 . /usr/local/bin/virtualenvwrapper.sh
 
-
+# weather fun
+function weather {
+ curl wttr.in/$1
+}
